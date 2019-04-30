@@ -3,12 +3,14 @@ import Stock from '../components/Stock'
 
 class StockContainer extends Component {
 
+
   render() {
+    const {stocks, handleClick} = this.props
     return (
       <div>
         <h2>Stocks</h2>
         {
-          //render the list of stocks here
+          stocks.map(stock => <Stock stock={stock} handleClick={handleClick} key={stock.id}/>)//render the list of stocks here
         }
       </div>
     );
